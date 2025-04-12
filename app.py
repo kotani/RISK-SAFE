@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 
 # model
-with open("SVC_revise.pkl", "rb") as f:
+with open("SVC_revise_train.pkl", "rb") as f:
     model = pickle.load(f) 
 
 scaler = model.named_steps["scaler"]
