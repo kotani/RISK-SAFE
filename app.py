@@ -37,11 +37,9 @@ if st.sidebar.button("Predict"):
     result = model.predict_proba(input_data)[0][1]
 
     st.subheader("Prediction Result")
-   
-    if float(probability) <= 0:
+    if float(probability) > 0 and float(probalilty) < 100:
+        st.write(f"Probability of Brs: {probability}")
+    elif float(probability) <= 0:
         st.write("Probability of Brs: 0")
     elif float(probability) >= 100:
         st.write("Probability of Brs: 100")
-    elif float(probability) > 0 and float(probalilty) < 100:
-        st.write(f"Probability of Brs: {probability}")
-    
