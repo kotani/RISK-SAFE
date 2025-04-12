@@ -33,7 +33,7 @@ if st.sidebar.button("Predict"):
 
     # decision_function と predict_proba の取得
     probability = model.decision_function(input_data)[0]
-    result = model.predict_proba(input_data)[0][1]  # 予測確率（0〜1）
+    result = model.predict(input_data)  # 予測確率（0〜1）
 
     st.subheader("Prediction Result")
 
