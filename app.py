@@ -10,7 +10,7 @@ scaler = model.named_steps["scaler"]
 svm = model.named_steps["clf"]
 
 # title
-st.title("Brugada Syndrome Risk Prediction")
+st.title("Brugada Syndrome Risk Prediction\n RISK-SAFE score")
 
 # user input
 st.sidebar.header("Input Features")
