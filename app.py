@@ -2,6 +2,18 @@ import streamlit as st
 import pickle
 import numpy as np
 
+# GitHubバッジを非表示にするCSS
+hide_github_style = """
+    <style>
+        .viewerBadge_container__1QSob {
+            display: none !important;
+        }
+    </style>
+"""
+
+# マークダウンで埋め込み
+st.markdown(hide_github_style, unsafe_allow_html=True)
+
 # モデルを読み込む
 with open("SVM.pkl", "rb") as f:
     model = pickle.load(f) 
