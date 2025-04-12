@@ -27,18 +27,13 @@ ER_presence = st.sidebar.radio("Presence of ER", [0, 1])
 
 
 if st.sidebar.button("Predict"):
-    # 入力データをnumpy形式で準備
+    # data to numpy
     input_data = np.array([[r_J_interval, syncope, frag_QRS, ER_presence, T_peak_to_T_end, QRS_V6, age]])
 
-
-    # 確率（陽性＝Brsである確率）
+    # Probability
     probability = model.predict_proba(input_data)[0][1]
 
     st.subheader("Prediction Result")
     st.write(f"Predicted probability of Brs: {probability * 100:.2f}%")
 
-    # 疾患の有無（50%を基準）
-    if probability >= 0.5:
-        st.write("→ Probability of Brs: **YES**")
-    else:
-        st.write("→ Probability of Brs: **NO**")
+ 
