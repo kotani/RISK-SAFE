@@ -42,6 +42,6 @@ if st.sidebar.button("Predict"):
         st.write("Probability of Brs: 0")
     elif float(probability) >= 100:
         st.write("Probability of Brs: 100")
-    else:
+    elif float(probability) > 0 and float(probalilty) < 100:
         st.write(f"Probability of Brs: {probability}")
     
