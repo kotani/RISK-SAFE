@@ -31,18 +31,19 @@ if st.sidebar.button("Predict"):
     # data to numpy
     input_data = np.array([[r_J_interval, syncope,frag_QRS, ER_presence,T_peak_to_T_end, QRS_V6,age]])
 
-    # predict
-    probability = model.decision_function(input_data)
-    # result
-    result = model.predict_proba(input_data)[0][1]
-    
+    # decision_function と predict_proba の取得
+    probability = model.decision_function(input_data)[0]
+    result = model.predict_proba(input_data)[0][1]  # 予測確率（0〜1）
+
     st.subheader("Prediction Result")
-    if float(probability) > 0 and float(probability) < 100:
-        st.write(f"Probability of Brs: {probability}")
-        st.write(result)
-    elif float(probability) <= 0:
+
+    # 条件分岐（スペル修正＆重複なしに整理）
+    if probability <= 0:
         st.write("Probability of Brs: 0")
-        st.write(result)
-    elif float(probability) >= 100:
+    elif probability >= 100:
         st.write("Probability of Brs: 100")
-        st.write(result)
+    else:
+        st.write(f"Probability of Brs: {probability:.2f}")
+    
+    # 必ず確率（result）も表示するように
+    st.write(f"Model predicted probability: {result:.2f}")
