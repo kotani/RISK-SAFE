@@ -31,8 +31,7 @@ if st.sidebar.button("Predict"):
     input_data = np.array([[r_J_interval, syncope, frag_QRS, ER_presence, T_peak_to_T_end, QRS_V6, age]])
     input_data = scaler.fit_transform(input_data)
     # Probability
-    #probability = model.predict_proba(input_data)[0][1]
-    probability = svm.predict_proba(input_data)[0][1]
+    probability = model.predict_proba(input_data)[0][1]
 
     st.subheader("Prediction Result")
     st.write(f"Predicted probability of Brs: {probability * 100:.2f}%")
