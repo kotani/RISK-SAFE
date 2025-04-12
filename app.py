@@ -32,7 +32,7 @@ if st.sidebar.button("Predict"):
     input_data = np.array([[r_J_interval, syncope,frag_QRS, ER_presence,T_peak_to_T_end, QRS_V6,age]])
 
     #probability = model.decision_function(input_data)[0]
-    probability = model.predict_proba(input_data)[0]
+    probability = model.predict_proba(input_data)[0][1]
     st.write(probability)
     
     st.subheader("Prediction Result")
