@@ -36,9 +36,11 @@ if st.sidebar.button("Predict"):
     st.subheader("Prediction Result")
 
     # result
-    if probability <= 0:
-        st.write("Probability of Brs: 0")
-    elif probability >= 100:
-        st.write("Probability of Brs: 100")
+    #if probability <= 0:
+        st.write("Probability of Brs: No")
+        #st.write("Probability of Brs: 0")
+    #elif probability >= 100:
+    #    st.write("Probability of Brs: 100")
     else:
-        st.write(f"Probability of Brs: {probability:.2f}")
+        #st.write(f"Probability of Brs: {probability:.2f}")
+        st.write("Probability of Brs: YES")
