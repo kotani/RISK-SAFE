@@ -2,15 +2,13 @@ import streamlit as st
 import pickle
 import numpy as np
 
-st.set_page_config(page_title="My App", layout="wide")
 hide_github_icon = """
-    <style>
-        .viewerBadge_container__1QSob {
-            display: none !important;
-        }
-    </style>
+#GithubIcon {
+  visibility: hidden;
+}
 """
 st.markdown(hide_github_icon, unsafe_allow_html=True)
+
 
 
 # モデルを読み込む
