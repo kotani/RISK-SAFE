@@ -29,7 +29,6 @@ ER_presence = st.sidebar.radio("Presence of ER", [0, 1])
 if st.sidebar.button("Predict"):
     # data to numpy
     input_data = np.array([[r_J_interval, syncope, frag_QRS, ER_presence, T_peak_to_T_end, QRS_V6, age]])
-    input_data = scaler.fit_transform(input_data)
     # Probability
     probability = model.predict_proba(input_data)[0][1]
 
