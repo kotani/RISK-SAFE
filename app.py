@@ -46,4 +46,4 @@ if st.sidebar.button("Predict"):
         st.write(f"Probability of Brs: {probability:.2f}")
     
     # 必ず確率（result）も表示するように
-    st.write(f"Model predicted probability: {result:.2f}")
+    st.write(f"Model predicted probability: {result}")
