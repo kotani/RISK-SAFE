@@ -34,7 +34,7 @@ if st.sidebar.button("Predict"):
     # predict
     probability = model.decision_function(input_data)
     # result
-    result = model.predict(input_data)[0]
+    result = model.predict_proba(input_data)[0][1]
 
     st.subheader("Prediction Result")
     st.write(f"Brs risk {result}")
