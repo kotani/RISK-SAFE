@@ -16,10 +16,10 @@ st.title("Brugada Syndrome Risk Prediction")
 st.sidebar.header("Input Features")
 
 # input filed
-r_J_interval = st.sidebar.number_input("r-J interval in V1 (ms)", min_value=0.0, max_value=200.0, step=0.1)
-QRS_V6 = st.sidebar.number_input("QRS duration in V6 (ms)", min_value=0.0, max_value=200.0, step=0.1)
-T_peak_to_T_end = st.sidebar.number_input("T-peak-to-T-end interval (ms)", min_value=0.0, max_value=200.0, step=0.1)
-age = st.sidebar.number_input("Age", min_value=0, max_value=100, step=1)
+r_J_interval = st.sidebar.number_input("r-J interval in V1 (ms)", min_value=0.0, max_value=400.0, step=0.1)
+QRS_V6 = st.sidebar.number_input("QRS duration in V6 (ms)", min_value=0.0, max_value=1000.0, step=0.1)
+T_peak_to_T_end = st.sidebar.number_input("T-peak-to-T-end interval (ms)", min_value=0.0, max_value=400.0, step=0.1)
+age = st.sidebar.number_input("Age", min_value=0, max_value=150, step=1)
 
 syncope = st.sidebar.radio("Syncope", [0, 1])
 frag_QRS = st.sidebar.radio("Fragmented QRS", [0, 1])
