@@ -35,7 +35,7 @@ if st.sidebar.button("Predict"):
     probability = model.predict_proba(input_data)[0][1]
     
     st.subheader("Prediction Result")
-
+    st.write(probability)
     # output
     if probability <= 0:
         st.write("Probability of Brs: No")
