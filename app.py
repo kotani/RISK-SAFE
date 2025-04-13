@@ -33,6 +33,6 @@ if st.sidebar.button("Predict"):
     probability = model.predict_proba(input_data)[0][1]
 
     st.subheader("Prediction Result")
-    st.write(f"Predicted probability of Brs: {probability * 100:.2f}%")
+    st.write(f"Predicted probability of major arrhythmic events in Brugada syndrome: {probability * 100:.2f}%")
 
  
