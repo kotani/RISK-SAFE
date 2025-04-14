@@ -1,0 +1,12 @@
+name: Keep Streamlit App Awake
+
+on:
+  schedule:
+    - cron: "*/120 * * * *"  # 毎120分に実行
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl the Streamlit App
+        run: curl -s https://risk-safe-3kag2nhutrzeqnvbptmftc.streamlit.app/ > /dev/null
