@@ -2,7 +2,7 @@ name: Keep Streamlit App Awake
 
 on:
   schedule:
-    - cron: "*/120 * * * *"  # 毎120分に実行
+    - cron: "*/30 * * * *"  # 毎30分に実行
 
 jobs:
   ping:
